@@ -1,0 +1,184 @@
+:root {
+    /* Size */
+
+    --min-width: 375px;
+    --max-width: 1440px;
+
+    /* Colors */
+
+    --clr-primary-100: hsl(215, 51%, 70%);
+    --clr-primary-200: hsl(178, 100%, 50%);
+
+    --clr-neutral-100: hsl(217, 54%, 11%);
+    --clr-neutral-200: hsl(216, 50%, 16%);
+    --clr-neutral-300: hsl(215, 32%, 27%);
+    --clr-neutral-400: hsl(0, 0%, 100%);
+
+    /* Font Size */
+
+    --fs-100: 18px;
+
+    /* Font Family */
+
+    --ff-100: "Outfit", sans-serif;
+
+    /* Font Weight */
+
+    --fw-100: 300;
+    --fw-200: 400;
+    --fe-300: 600;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100vh;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-optical-sizing: auto;
+    background-color: var(--clr-neutral-100);
+}
+
+/* Global Setup */
+
+article {
+    width: 350px;
+    height: 550px;
+    background-color: var(--clr-neutral-200);
+    border-radius: 1em;
+    font-family: var(--ff-100);
+
+    --border-angle: 0turn;
+    --main-bg: conic-gradient(from var(--border-angle),
+            #213,
+            #112 5%,
+            #112 60%,
+            #213 95%);
+    --gradient-border: conic-gradient(from var(--border-angle), transparent 25%, #08f, #f03 99%, transparent);
+
+    border: solid 5px transparent;
+    border-radius: 2em;
+
+    background:
+        var(--main-bg) padding-box,
+        var(--gradient-border) border-box,
+        var(--main-bg) border-box;
+    background-position: center;
+
+    animation: bg-spin 3s linear infinite;
+
+
+}
+
+article:hover {
+    animation-play-state: paused;
+}
+
+@keyframes bg-spin {
+    to {
+        --border-angle: 1turn;
+    }
+}
+
+@property --border-angle {
+    syntax: "<angle>";
+    inherits: false;
+    initial-value: 0turn;
+}
+
+article .picture {
+    width: 92%;
+    height: 50%;
+    margin-inline: 1em auto;
+    margin-block-start: 1em;
+    border-radius: 1em;
+}
+
+article .picture #canvas {
+    width: 100%;
+    height: 100%;
+    border-radius: 1em;
+}
+
+article .content {
+    width: 100%;
+    height: 50%;
+}
+
+article .content h1 {
+    margin-block: 1em auto;
+    color: var(--clr-neutral-400);
+    margin-inline: 1em 0;
+    font-size: calc(var(--fs-100) + .5rem);
+}
+
+article .content .card-text {
+    margin-block: 1em 0;
+    margin-inline: 1.5em 2em;
+    color: var(--clr-primary-100);
+    line-height: 30px;
+    ;
+}
+
+article .content .row {
+    width: 90%;
+    height: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-inline: 1em auto;
+    margin-block: 1em 1em;
+    border-bottom: 1px solid var(--clr-primary-100);
+    padding-bottom: 1em;
+}
+
+article .content .row span:nth-child(1) {
+    color: var(--clr-primary-200);
+    margin-left: .5rem;
+}
+
+article .content .row span:nth-child(1) i {
+    margin-right: .5em;
+}
+
+article .content .row span:nth-child(2) {
+    color: var(--clr-primary-100);
+    margin-right: .5rem;
+}
+
+article .content .create {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    padding-bottom: 1em;
+}
+
+article .content .create img {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    margin-inline: 1em 0;
+}
+
+article .content .create .creator {
+    font-size: calc(var(--fs-100) - .2rem);
+    color: var(--clr-primary-100);
+    margin-left: 1em;
+}
+
+article .content .create .creator span {
+    color: var(--clr-neutral-400);
+    margin-left: .4em;
+}
