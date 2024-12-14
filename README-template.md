@@ -28,7 +28,7 @@ Users should be able to:
 - See hover states for interactive elements
 
 ### Screenshot
-![](./design/solution.jpeg);
+![My Solution](./design/solution.jpeg);
 
 ### Links
 
